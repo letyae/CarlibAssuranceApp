@@ -65,7 +65,6 @@ public class DataLayerApplication implements CommandLineRunner{
 		 Category Category1 = OptCategory.get();
 		 System.out.println(Category1.getName());
 		
-		System.out.println("******************************************");
 
     } 
 		
