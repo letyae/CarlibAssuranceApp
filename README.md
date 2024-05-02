@@ -1,5 +1,5 @@
 # CarlibAssuranceApp
-CarlibAssuranceApp est une application coté backEnd  pour le compte de CARLIB Assurances, un site d’assurance en ligne.
+CarlibAssuranceApp est une application coté backEnd  pour le compte de CARLIB Assurances, une assurance en ligne.
 
 Il est développé à l'aide du framework spring Boot, et nous utilisons pour la persistence:  Spring Data Jpa, JDBC et une base de donnée  Mysql.
 
