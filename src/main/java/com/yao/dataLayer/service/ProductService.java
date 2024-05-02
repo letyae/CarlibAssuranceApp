@@ -1,11 +1,12 @@
-package service;
-<<<<<<< HEAD
+package com.yao.dataLayer.service;
+
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import Repository.ProductRepository;
-import model.Product;
+import com.yao.dataLayer.Repository.ProductRepository;
+import com.yao.dataLayer.model.Product;
 
 @Service
 public class ProductService {
@@ -15,11 +16,9 @@ public class ProductService {
  public Iterable<Product> getProducts(){
     return productRepository.findAll();
   }
-=======
-import org.springframework.stereotype.Service;
-
-@Service
-public class ProductService {
-
->>>>>>> cbf46cbb80b4bf03d8d04d7f18d93ea0f1a7c836
+ 
+ public Optional<Product> getProductById(int id){
+	    return productRepository.findById(id);
+	  }
 }
+ 

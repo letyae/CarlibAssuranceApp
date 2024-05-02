@@ -1,4 +1,4 @@
-package model;
+package com.yao.dataLayer.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
