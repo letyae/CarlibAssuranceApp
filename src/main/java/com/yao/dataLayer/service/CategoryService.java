@@ -12,14 +12,14 @@ import com.yao.dataLayer.model.Category;
 public class CategoryService {
 	
 	
-	@Autowired
+    @Autowired
     private CategoryRepository categoryRepository;
  
- public Iterable<Category> getCategory(){
-    return categoryRepository.findAll();
+    public Iterable<Category> getCategory(){
+            return categoryRepository.findAll();
   }
 
- public Optional<Category> getCategoryById(int id){
+    public Optional<Category> getCategoryById(int id){
 	    return categoryRepository.findById(id);
 	  }
 }
