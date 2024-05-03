@@ -41,7 +41,7 @@ public class DataLayerApplication implements CommandLineRunner{
 		Product product1 = OptProduct.get();
 		 System.out.println(product1.getName());
 		
-		System.out.println("******************************************");
+		
 
 		
 		System.out.println("**************Comment********************");
@@ -53,7 +53,7 @@ public class DataLayerApplication implements CommandLineRunner{
 		 Comment comment1 = OptComment.get();
 		 System.out.println(comment1.getContent());
 
-		System.out.println("******************************************");
+		
 
 		
 		System.out.println("**************Category********************");
