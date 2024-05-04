@@ -15,6 +15,8 @@ import com.yao.dataLayer.service.CategoryService;
 import com.yao.dataLayer.service.CommentService;
 import com.yao.dataLayer.service.ProductService;
 
+import jakarta.transaction.Transactional;
+
 @SpringBootApplication  
 public class DataLayerApplication implements CommandLineRunner{
 	@Autowired
@@ -31,6 +33,7 @@ public class DataLayerApplication implements CommandLineRunner{
 	}
 	
 	@Override
+	@Transactional
 	public void run(String... args) throws Exception {
 		System.out.println("**************Product********************");
 
@@ -40,6 +43,7 @@ public class DataLayerApplication implements CommandLineRunner{
         Optional<Product> OptProduct =  productService.getProductById(1);		
 		Product product1 = OptProduct.get();
 		 System.out.println(product1.getName());
+		 product1.getComments().forEach (comment -> System.out.println(comment.getContent()));
 		
 		System.out.println("******************************************");
 
@@ -63,10 +67,10 @@ public class DataLayerApplication implements CommandLineRunner{
 		
 		 Optional<Category> OptCategory =  categoryService.getCategoryById(1);		
 		 Category Category1 = OptCategory.get();
-		 System.out.println(Category1.getName());
+		 System.out.println(Category1.getName()); 
 		
 		System.out.println("******************************************");
 
-    } 
+    }  
 		
 }
