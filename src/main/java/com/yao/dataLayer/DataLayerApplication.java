@@ -45,7 +45,7 @@ public class DataLayerApplication implements CommandLineRunner{
 		 System.out.println(product1.getName());
 		 product1.getComments().forEach (comment -> System.out.println(comment.getContent()));
 		
-		System.out.println("******************************************");
+		
 
 		
 		System.out.println("**************Comment********************");
@@ -57,7 +57,7 @@ public class DataLayerApplication implements CommandLineRunner{
 		 Comment comment1 = OptComment.get();
 		 System.out.println(comment1.getContent());
 
-		System.out.println("******************************************");
+		
 
 		
 		System.out.println("**************Category********************");
@@ -69,7 +69,6 @@ public class DataLayerApplication implements CommandLineRunner{
 		 Category Category1 = OptCategory.get();
 		 System.out.println(Category1.getName()); 
 		
-		System.out.println("******************************************");
 
     }  
 		

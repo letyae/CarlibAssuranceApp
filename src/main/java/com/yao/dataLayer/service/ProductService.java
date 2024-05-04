@@ -10,15 +10,15 @@ import com.yao.dataLayer.model.Product;
 
 @Service
 public class ProductService {
-	@Autowired
+    @Autowired
     private ProductRepository productRepository;
  
- public Iterable<Product> getProducts(){
-    return productRepository.findAll();
+    public Iterable<Product> getProducts(){
+       return productRepository.findAll();
   }
  
- public Optional<Product> getProductById(int id){
-	    return productRepository.findById(id);
+    public Optional<Product> getProductById(int id){
+       return productRepository.findById(id);
 	  }
 }
  
