@@ -47,8 +47,6 @@ public class DataLayerApplication implements CommandLineRunner{
 		 System.out.println("**********les catégories associes:");
 		 product1.getCategories().forEach (category -> System.out.println(category.getName()));
 		
-
-		
 		System.out.println("**************Comment********************");
 
 		Iterable<Comment> comments =  commentService.getComment();
@@ -57,9 +55,6 @@ public class DataLayerApplication implements CommandLineRunner{
 		 Optional<Comment> OptComment =  commentService.getCommentById(1);		
 		 Comment comment1 = OptComment.get();
 		 System.out.println(comment1.getContent());
-
-		
-
 		
 		System.out.println("**************Category********************");
 		
