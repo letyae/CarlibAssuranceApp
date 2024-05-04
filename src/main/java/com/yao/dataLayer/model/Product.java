@@ -11,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -39,6 +40,12 @@ public class Product {
 			)	
 	@JoinColumn(name="produit_id")
 	  List<Comment> comments= new ArrayList<>();
+	
+	@ManyToMany(
+			mappedBy="products"
+			)
+	 List<Category> categories = new ArrayList<>();
+
 	
 	public List<Comment> getComments() {
 		return comments;

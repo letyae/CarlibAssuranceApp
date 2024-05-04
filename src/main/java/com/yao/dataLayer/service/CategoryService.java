@@ -10,8 +10,7 @@ import com.yao.dataLayer.model.Category;
 
 @Service
 public class CategoryService {
-	
-	
+
     @Autowired
     private CategoryRepository categoryRepository;
  
