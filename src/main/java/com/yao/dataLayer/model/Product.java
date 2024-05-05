@@ -12,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -45,11 +46,26 @@ public class Product {
 			mappedBy="products"
 			)
 	 List<Category> categories = new ArrayList<>();
+	
+	@ManyToOne(
+			cascade = CascadeType.ALL
+                                      )
+	@JoinColumn(name="produit_id")
+	private Product product;
 
 	
 	public List<Category> getCategories() {
 		return categories;
 	}
+	
+	
+	@OneToMany(
+			mappedBy = "product", 
+			cascade = CascadeType.ALL, 
+			orphanRemoval = true
+			)
+	List<Comment> comments = new ArrayList<>();
+	
 
 	public void setCategories(List<Category> categories) {
 		this.categories = categories;
