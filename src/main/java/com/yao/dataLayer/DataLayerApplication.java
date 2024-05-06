@@ -39,12 +39,13 @@ public class DataLayerApplication implements CommandLineRunner{
 
 		Iterable<Product> products =  productService.getProducts();		
 		products.forEach (product -> System.out.println(product.getName()));
-		
+		System.out.println("**********Product no 1:");
+
         Optional<Product> OptProduct =  productService.getProductById(1);		
 		Product product1 = OptProduct.get();
-		 System.out.println(product1.getName());
-		 product1.getComments().forEach (comment -> System.out.println(comment.getContent()));
-		
+		 System.out.println(product1.getName());		 
+		 System.out.println("**********les catégories associes:");
+		 product1.getCategories().forEach (category -> System.out.println(category.getName()));
 		
 		System.out.println("**************Comment********************");
 
@@ -59,10 +60,14 @@ public class DataLayerApplication implements CommandLineRunner{
 		
 		Iterable<Category> categories =  categoryService.getCategory();
 		categories.forEach (category -> System.out.println(category.getName()));
-		
+		System.out.println("**********Category no 1:");
 		 Optional<Category> OptCategory =  categoryService.getCategoryById(1);		
 		 Category Category1 = OptCategory.get();
-		 System.out.println(Category1.getName()); 	
+
+    System.out.println(Category1.getName()); 	
+		 System.out.println(Category1.getName()); 
+		 System.out.println("**********les produits associes:");
+		 Category1.getProducts().forEach (category -> System.out.println(category.getName()));
 
     }  
 		
