@@ -35,6 +35,7 @@ public class DataLayerApplication implements CommandLineRunner{
 	@Override
 	@Transactional
 	public void run(String... args) throws Exception {
+
 		System.out.println("**************Product********************");
 
 		Iterable<Product> products =  productService.getProducts();		
@@ -42,28 +43,33 @@ public class DataLayerApplication implements CommandLineRunner{
 		
         Optional<Product> OptProduct =  productService.getProductById(1);		
 		Product product1 = OptProduct.get();
-		 System.out.println(product1.getName());
-		 product1.getComments().forEach (comment -> System.out.println(comment.getContent()));
 		
+		System.out.println("**************Product no1:");
 		
+		System.out.println("Produit no1: "+product1.getName());
+		product1.getComments().forEach (comment -> System.out.println("Comments du produit no1: "+comment.getContent()));
+				
 		System.out.println("**************Comment********************");
 
 		Iterable<Comment> comments =  commentService.getComment();
 		comments.forEach (comment -> System.out.println(comment.getContent()));
 		
-		 Optional<Comment> OptComment =  commentService.getCommentById(1);		
-		 Comment comment1 = OptComment.get();
-		 System.out.println(comment1.getContent());
+		System.out.println("**************Comment no1:");
+
+		Optional<Comment> OptComment =  commentService.getCommentById(1);		
+		Comment comment1 = OptComment.get();
+		
+		System.out.println("Comment no1: "+comment1.getContent());
+		
+		System.out.println("Produit du comment no1: "+comment1.getProduct().getName());
 		
 		System.out.println("**************Category********************");
 		
 		Iterable<Category> categories =  categoryService.getCategory();
 		categories.forEach (category -> System.out.println(category.getName()));
 		
-		 Optional<Category> OptCategory =  categoryService.getCategoryById(1);		
-		 Category Category1 = OptCategory.get();
-		 System.out.println(Category1.getName()); 	
-
-    }  
-		
+		Optional<Category> OptCategory =  categoryService.getCategoryById(1);		
+		Category Category1 = OptCategory.get();
+		System.out.println(Category1.getName()); 	
+    }  		
 }
