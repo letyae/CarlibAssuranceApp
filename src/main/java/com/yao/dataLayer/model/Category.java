@@ -23,7 +23,7 @@ public class Category {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name ="categorie_id")
 	private int categoryId;
-	
+
 	@Column(name ="nom")
 	private String name;
 	@ManyToMany(
@@ -31,17 +31,29 @@ public class Category {
 			cascade= {
 					CascadeType.PERSIST,
 					CascadeType.MERGE
-			      }
-	)
-	
+			}
+			)
+
 	@JoinTable(
-			   name="categorie_produit",
-			   joinColumns=@JoinColumn(name="categorie_id"),
-			   inverseJoinColumns=@JoinColumn(name="produit_id")
+			name="categorie_produit",
+			joinColumns=@JoinColumn(name="categorie_id"),
+			inverseJoinColumns=@JoinColumn(name="produit_id")
 			) 
-	
-	 List<Product> products = new ArrayList<>();
-		
+
+	List<Product> products = new ArrayList<>();
+
+	//méthodes utilitaires
+
+	public void addProduct(Product product) {
+		products.add(product);
+		product.getCategories().add(this);
+	}
+
+	public void removeProduct(Product product) {
+		products.remove(product);
+		product.getCategories().remove(this);
+	} 
+
 	public int getCategoryId() {
 		return categoryId;
 	}
@@ -65,4 +77,4 @@ public class Category {
 	public void setName(String name) {
 		this.name = name;
 	}
-}
+} 

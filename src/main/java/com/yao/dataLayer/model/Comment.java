@@ -24,6 +24,14 @@ public class Comment{
 	@JoinColumn(name="produit_id")
 	private Product product;
 	
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
 	public int getContentId() {
 		return contentId;
 	}
