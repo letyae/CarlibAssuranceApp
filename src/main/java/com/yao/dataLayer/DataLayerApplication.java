@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
+import org.springframework.boot.SpringApplication; 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.yao.dataLayer.model.Product;
@@ -62,8 +62,7 @@ public class DataLayerApplication implements CommandLineRunner{
 		
 		 Optional<Category> OptCategory =  categoryService.getCategoryById(1);		
 		 Category Category1 = OptCategory.get();
-		 System.out.println(Category1.getName()); 
-		
+		 System.out.println(Category1.getName()); 	
 
     }  
 		

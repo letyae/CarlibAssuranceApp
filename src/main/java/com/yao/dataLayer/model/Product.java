@@ -35,38 +35,38 @@ public class Product {
 	private int cost;
 
 	@OneToMany(
+			mappedBy="product",
 			cascade = CascadeType.ALL,
-			orphanRemoval = true,
-			fetch= FetchType.EAGER
-			)	
-	@JoinColumn(name="produit_id")
+			orphanRemoval = true
+			)
+	
+	//@JoinColumn(name="produit_id")
 	  List<Comment> comments= new ArrayList<>();
 	
 	@ManyToMany(
-			mappedBy="products"
+			mappedBy="products",
+			cascade=CascadeType.ALL
 			)
 	 List<Category> categories = new ArrayList<>();
+		
+	//helpers method : pour aider à la synchronisation des objets
 	
-	@ManyToOne(
-			cascade = CascadeType.ALL
-                                      )
-	@JoinColumn(name="produit_id")
-	private Product product;
+	public void addComment(Comment comment) { 
+		comments.add(comment);
+		comment.setProduct(this);
+	}
+	
+    public void removeComment(Comment comment) {
+     	comments.remove(comment);
+    	comment.setProduct(null);	
+	}
+	
 
-	
 	public List<Category> getCategories() {
 		return categories;
 	}
 	
 	
-	@OneToMany(
-			mappedBy = "product", 
-			cascade = CascadeType.ALL, 
-			orphanRemoval = true
-			)
-	List<Comment> comments = new ArrayList<>();
-	
-
 	public void setCategories(List<Category> categories) {
 		this.categories = categories;
 	}
