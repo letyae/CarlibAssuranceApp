@@ -40,7 +40,8 @@ public class DataLayerApplication implements CommandLineRunner{
 
 		Iterable<Product> products =  productService.getProducts();		
 		products.forEach (product -> System.out.println(product.getName()));
-		
+		System.out.println("**********Product no 1:");
+
         Optional<Product> OptProduct =  productService.getProductById(1);		
 		Product product1 = OptProduct.get();
 		
