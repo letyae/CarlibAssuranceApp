@@ -71,6 +71,23 @@ public class DataLayerApplication implements CommandLineRunner{
 		
 		Optional<Category> OptCategory =  categoryService.getCategoryById(1);		
 		Category Category1 = OptCategory.get();
-		System.out.println(Category1.getName()); 	
+		System.out.println(Category1.getName());
+		
+		Category category2 = new Category();
+		//category2.setCategoryId(4);
+		//category2.setName("JeunesEnseignants");
+		category2.setName("Promotion");
+		category2 =categoryService.saveCategory(category2); 
+		System.out.println("category2 id: "+category2.getCategoryId());
+		
+		categoryService.getCategory().forEach(
+				category -> System.out.println(category.getName()));
+		
+		//category2.setProducts(null);
+		
+		
+		
+		
+		
     }  		
 }
