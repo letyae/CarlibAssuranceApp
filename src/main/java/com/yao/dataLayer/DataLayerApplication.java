@@ -49,7 +49,20 @@ public class DataLayerApplication implements CommandLineRunner{
 		
 		System.out.println("Produit no1: "+product1.getName());
 		product1.getComments().forEach (comment -> System.out.println("Comments du produit no1: "+comment.getContent()));
-				
+		
+		System.out.println("************** Create Product :");
+		Product product2 = new Product();
+		product2.setName("AssuranceHabitation");
+		product2.setDescription("Assurance couvrant tous les accessoires de l'habitat");
+		product2.setCost(300); 
+		
+		product2 =productService.saveProduct(product2); 
+		System.out.println("product2 id: "+ product2.getProductId() );
+		
+		productService.getProducts().forEach(
+				product -> System.out.println(product.getName()));
+						
+		
 		System.out.println("**************Comment********************");
 
 		Iterable<Comment> comments =  commentService.getComment();
