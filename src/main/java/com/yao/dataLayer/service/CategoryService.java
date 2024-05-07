@@ -16,9 +16,15 @@ public class CategoryService {
  
     public Iterable<Category> getCategory(){
             return categoryRepository.findAll();
-  }
+    }
 
     public Optional<Category> getCategoryById(int id){
 	    return categoryRepository.findById(id);
-	  }
+	}
+        
+    public Category saveCategory(Category category){
+	    return categoryRepository.save(category);
+	}
+    
+    
 }
