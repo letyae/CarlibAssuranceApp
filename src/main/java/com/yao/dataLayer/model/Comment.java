@@ -19,7 +19,10 @@ public class Comment{
 	private int contentId;
 	
 	@ManyToOne(
-			cascade =CascadeType.ALL
+			cascade = { 
+				    	CascadeType.PERSIST,
+					    CascadeType.MERGE
+			        }
 			)
 	@JoinColumn(name="produit_id")
 	private Product product;

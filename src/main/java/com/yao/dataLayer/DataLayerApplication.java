@@ -76,6 +76,12 @@ public class DataLayerApplication implements CommandLineRunner{
 		System.out.println("Comment no1: "+comment1.getContent());
 		
 		System.out.println("Produit du comment no1: "+comment1.getProduct().getName());
+		System.out.println("**************creation de Comment:");
+		
+		Comment comment2=  new Comment();
+		comment2.setContent(" Excellente assurance sans risques en 2024 ! ");
+		product2.addComment(comment2); 
+		//productService.saveProduct(product2);
 		
 		System.out.println("**************Category********************");
 		
@@ -97,6 +103,39 @@ public class DataLayerApplication implements CommandLineRunner{
 				category -> System.out.println(category.getName()));
 		
 		//category2.setProducts(null);
+		
+		// Ds ce cas pas besoin de save
+		Product productAssuranceAuTiers = productService.getProductById(1).get();	
+		Comment newComment = new Comment();
+		newComment.setContent("Assurance peu intéressante.");
+		productAssuranceAuTiers.addComment(newComment); 
+				
+		//On peut enregistrer simultanement 2 objets en relation
+		Category category3 = new Category();	
+		category3.setName("-25");
+		
+		Product product3 = new Product();
+		product3.setName("AssuranceAuTiers-25ans");
+		product3.setDescription("Assurance au tiers réservée aux conducteurs de -25 ans.");
+		product3.setCost(3000);
+		
+		category3.addProduct(product3);
+		categoryService.saveCategory(category3);
+		
+		// UPDATE 
+		Product productAssurance = productService.getProductById(2).get();	
+		System.out.println("Cost: "+productAssurance.getCost());
+		
+		productAssurance.setCost(950);
+	    productService.saveProduct(productAssurance);
+	     
+		Product productAssuranceUpdate = productService.getProductById(2).get();	
+		System.out.println("Cost: " + productAssuranceUpdate.getCost());
+
+		
+		
+	
+			
 		
 		
 		

@@ -3,6 +3,8 @@ package com.yao.dataLayer.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,6 +21,7 @@ import jakarta.persistence.Table;
 import com.yao.dataLayer.model.Comment;
 @Entity
 @Table(name="produit")
+@DynamicUpdate    // lors de la mise a jours en bdd, il permet de mettre a jours q l'attribut specifie, car par defaut tt est update
 public class Product {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
