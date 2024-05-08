@@ -24,4 +24,10 @@ public class CategoryService {
     public Category saveCategory(Category category){
 	    return categoryRepository.save(category);
 	}   
+    
+    public boolean deleteCategoryById(int id){
+	     categoryRepository.deleteById(id);
+	     return true;
+	}
+    
 }

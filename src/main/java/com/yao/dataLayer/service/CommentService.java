@@ -26,4 +26,10 @@ public class CommentService {
 	    return commentRepository.save(comment);
 	  }
  
+ 
+ public boolean deleteCommentById(int id){
+	     commentRepository.deleteById(id);
+	     return true;
+	  }
+ 
 }

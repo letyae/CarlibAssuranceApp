@@ -26,6 +26,7 @@ public class Category {
 
 	@Column(name ="nom")
 	private String name;
+	
 	@ManyToMany(
 			fetch = FetchType.LAZY,
 			cascade= {
