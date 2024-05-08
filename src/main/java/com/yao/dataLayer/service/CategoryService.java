@@ -10,7 +10,6 @@ import com.yao.dataLayer.model.Category;
 
 @Service
 public class CategoryService {
-
     @Autowired
     private CategoryRepository categoryRepository;
  
@@ -24,7 +23,5 @@ public class CategoryService {
         
     public Category saveCategory(Category category){
 	    return categoryRepository.save(category);
-	}
-    
-    
+	}   
 }
