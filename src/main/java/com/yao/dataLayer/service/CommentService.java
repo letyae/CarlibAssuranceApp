@@ -27,9 +27,8 @@ public class CommentService {
 	  }
  
  
- public boolean deleteCommentById(int id){
+ public void deleteCommentById(int id){
 	     commentRepository.deleteById(id);
-	     return true;
 	  }
  
 }
