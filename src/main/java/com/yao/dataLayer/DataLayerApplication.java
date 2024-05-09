@@ -131,15 +131,25 @@ public class DataLayerApplication implements CommandLineRunner{
 	     
 		Product productAssuranceUpdate = productService.getProductById(2).get();	
 		System.out.println("Cost: " + productAssuranceUpdate.getCost());
+		
+		
+	   //suppression d'objet product qui entraine la suppression des commentaires
+		productService.deleteProductById(24);
+		productService.deleteProductById(25);
+		productService.deleteProductById(28);
+		productService.deleteProductById(29);
+		productService.deleteProductById(30);
+		
+		//suppression d'objet comment qui n'entraine pas la suppression des products
+		commentService.deleteCommentById(25);
+		commentService.deleteCommentById(27);
+		commentService.deleteCommentById(29); 
 
+		//suppression d'objet categorie
+		//categoryService.deleteCategoryById(52);
 		
-		
-	
-			
-		
-		
-		
-		
+		productService.deleteProductById(47);
+
 		
     }  		
 }
