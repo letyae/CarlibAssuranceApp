@@ -47,8 +47,11 @@ public class Product {
 	  List<Comment> comments= new ArrayList<>();
 	
 	@ManyToMany(
-			mappedBy="products",
-			cascade=CascadeType.ALL
+			mappedBy = "products",
+			cascade  = {
+					     CascadeType.PERSIST,
+					     CascadeType.MERGE
+					   }
 			)
 	 List<Category> categories = new ArrayList<>();
 		

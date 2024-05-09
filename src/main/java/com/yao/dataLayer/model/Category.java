@@ -43,7 +43,7 @@ public class Category {
 
 	List<Product> products = new ArrayList<>();
 
-	//méthodes utilitaires
+	//méthodes utilitaires  
 
 	public void addProduct(Product product) {
 		products.add(product);
