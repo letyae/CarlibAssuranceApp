@@ -150,6 +150,30 @@ public class DataLayerApplication implements CommandLineRunner{
 		
 		productService.deleteProductById(47);
 
+		// Recherche 
 		
+		Iterable<Product> productsFind = productService.findByName("AssuranceHabitation");
+					
+			System.out.println("*********** Products Find: *********** ");
+			
+			productsFind.forEach (produit -> System.out.println("Name du produit find: "+produit.getName()));
+			
+			
+			
+			Iterable<Product> productsCategoriesFind = productService.findByCategoriesName("Standard");
+			
+			System.out.println("*********** Product find by their Categories Find: ***********"); 
+			
+			productsCategoriesFind.forEach (produit -> System.out.println("produit mame find: "+produit.getName()));
+			
+			
+			
+			
+			System.out.println("*********** Products Find: *********** ");
+			
+			productsFind.forEach (produit -> System.out.println("Name du produit find: "+produit.getName()));
+			
+			
+				
     }  		
 }
