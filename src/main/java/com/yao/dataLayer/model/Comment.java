@@ -17,6 +17,10 @@ public class Comment{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="commentaire_id")
 	private int contentId;
+		
+	@Column(name="contenu")
+	private String content; 
+	
 	
 	@ManyToOne(
 			cascade = { 
@@ -50,10 +54,6 @@ public class Comment{
 	public void setContent(String content) {
 		this.content = content;
 	}
-
-	@Column(name="contenu")
-	private String content; 
-	
 	
 	
 }

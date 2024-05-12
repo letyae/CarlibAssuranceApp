@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yao.dataLayer.Repository.CommentRepository;
+import com.yao.dataLayer.model.Category;
 import com.yao.dataLayer.model.Comment;
 
 @Service
@@ -30,5 +31,9 @@ public class CommentService {
  public void deleteCommentById(int id){
 	     commentRepository.deleteById(id);
 	  }
+ 
+ public Iterable<Comment> findByContentContaining(String expression){
+     return commentRepository.findByContentContaining(expression);
+}
  
 }
