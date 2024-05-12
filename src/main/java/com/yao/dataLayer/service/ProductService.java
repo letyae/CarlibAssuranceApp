@@ -31,17 +31,17 @@ public class ProductService {
          productRepository.deleteById(id);
  	  }
     
-    
-    
-   
     public Iterable<Product> findByName(String name){
         return productRepository.findByName(name);
    }
-    
-        
+            
     public Iterable<Product> findByCategoriesName(String name){
         return productRepository.findByCategoriesName(name);
    }
-      
+        
+	public Iterable<Product> findByCostLessThan(Integer cost){
+		 return productRepository.findByCostLessThan(cost);
+	}
+
 }
  

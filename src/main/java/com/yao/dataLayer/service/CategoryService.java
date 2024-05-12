@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.yao.dataLayer.Repository.CategoryRepository;
 import com.yao.dataLayer.model.Category;
+import com.yao.dataLayer.model.Product;
 
 @Service
 public class CategoryService {
@@ -29,4 +30,13 @@ public class CategoryService {
 	     categoryRepository.deleteById(id);
 	}
     
+
+    public Iterable<Category> findByName(String name){
+        return categoryRepository.findByName(name);
+   }
+            
+    public Iterable<Category> findByCategoriesName(String name){
+        return categoryRepository.findByProductsName(name);
+   }
+       
 }
