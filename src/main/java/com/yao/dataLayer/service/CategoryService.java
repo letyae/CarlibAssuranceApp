@@ -29,14 +29,13 @@ public class CategoryService {
     public void deleteCategoryById(int id){
 	     categoryRepository.deleteById(id);
 	}
-    
-
-    public Iterable<Category> findByName(String name){
-        return categoryRepository.findByName(name);
-   }
-            
+                
     public Iterable<Category> findByCategoriesName(String name){
-        return categoryRepository.findByProductsName(name);
+        return categoryRepository.findByCategoriesName(name);
+   }
+    
+    public Iterable<Category>  findByCategoriesProductName(String name){
+        return categoryRepository.findByCategoriesProductName(name);
    }
        
 }

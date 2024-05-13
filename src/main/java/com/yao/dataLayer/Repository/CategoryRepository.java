@@ -11,8 +11,8 @@ import com.yao.dataLayer.model.Product;
 @Repository
 public interface CategoryRepository extends CrudRepository<Category, Integer> {
 
-	public Iterable<Category> findByName(String name);
-	public Iterable<Category> findByProductsName(String name);
+	public Iterable<Category> findByCategoriesName(String name);
+	public Iterable<Category> findByCategoriesProductName(String name);
 		
 	
 }
