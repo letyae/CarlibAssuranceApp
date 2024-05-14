@@ -182,6 +182,7 @@ public class DataLayerApplication implements CommandLineRunner{
 			Iterable<Comment> searchComments = commentService.findByContentContaining("deçu");
 			searchComments.forEach(comment -> System.out.println(comment.getContent()));
 
-			
+			Iterable<Comment> searchComments = commentService.findByContentContaining("assurance");
+			searchComments.forEach(comment -> System.out.println(comment.getContent()));
     }  		
 }
