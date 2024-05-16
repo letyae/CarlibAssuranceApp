@@ -33,6 +33,9 @@ public class CategoryService {
     public Iterable<Category> findByCategoriesName(String name){
         return categoryRepository.findByCategoriesName(name);
    }
+	 public Iterable<Category> findByAllCategories(){
+        return categoryRepository.findByAllCategories();
+   }
     
     public Iterable<Category>  findByCategoriesProductName(String name){
         return categoryRepository.findByCategoriesProductName(name);
