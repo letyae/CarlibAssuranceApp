@@ -13,6 +13,7 @@ public interface CategoryRepository extends CrudRepository<Category, Integer> {
 
 	public Iterable<Category> findByCategoriesName(String name);
 	public Iterable<Category> findByCategoriesProductName(String name);
+	 public Iterable<Category> findByAllCategories();
 		
 	
 }
